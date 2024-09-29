@@ -3,12 +3,17 @@
     "short_name": "my_note",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
+    "background_color": "#FDF0D5",
+    "theme_color": "#C1121F",
     "description": "A simple note application that built with flutter, firebase, hive and bloc state management. same as google notes",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
+        {
+            "src": "icons/apple-touch-icon.png",
+            "sizes" : "180x180",
+            "type": "image/png"
+        },
         {
             "src": "icons/Icon-192.png",
             "sizes": "192x192",
