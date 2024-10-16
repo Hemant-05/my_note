@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_note/custom/CusTextField.dart';
-import 'package:my_note/custom/Hgtbox.dart';
 import 'package:my_note/utils/Pallet/ColorPallet.dart';
+
+import '../../utils/Custom/CusTextField.dart';
+import '../../utils/Custom/Hgtbox.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -11,10 +12,10 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _passController = TextEditingController();
-  TextEditingController _conPassController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _passController = TextEditingController();
+  final TextEditingController _conPassController = TextEditingController();
   bool isObs = false;
 
   @override
@@ -28,6 +29,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
             Image.asset(
               'assets/icon/logo.png',
               scale: 2,
+            ),
+            Text(
+              'Sign up',
+              style: TextStyle(
+                  color: Cus_Pallet.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold),
             ),
             Hgtbox(h: 50),
             CusTextField(
@@ -55,7 +63,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 hintText: 'Confirm Password',
                 prefixIcon: Icon(Icons.key),
                 isObscure: true),
-            Hgtbox(h: 10),
+            Hgtbox(h: 20),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, 'home');
+              },
+              child: Text('Create an account'),
+            ),
+            Hgtbox(h: 30),
             GestureDetector(
               onTap: () {
                 Navigator.pushReplacementNamed(context, 'login');
@@ -65,8 +80,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 style: TextStyle(color: Cus_Pallet.blue),
               ),
             ),
-            Hgtbox(h: 10),
-            ElevatedButton(onPressed: (){}, child: Text('Create an account'),),
           ],
         ),
       ),

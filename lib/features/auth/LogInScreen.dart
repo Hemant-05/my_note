@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_note/custom/CusTextField.dart';
-import 'package:my_note/custom/Hgtbox.dart';
-import 'package:my_note/utils/Pallet/ColorPallet.dart';
+import 'package:my_note/utils/Custom/CusTextField.dart';
+import '../../utils/Custom/Hgtbox.dart';
+import '../../utils/Pallet/ColorPallet.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -26,6 +26,7 @@ class _LogInScreenState extends State<LogInScreen> {
               'assets/icon/logo.png',
               scale: 2,
             ),
+            Text('Log in',style: TextStyle(color: Cus_Pallet.black,fontSize: 30,fontWeight: FontWeight.bold),),
             Hgtbox(h: 50),
             CusTextField(
                 controller: nameController,
@@ -40,10 +41,12 @@ class _LogInScreenState extends State<LogInScreen> {
                 isObscure: true),
             Hgtbox(h: 20),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(context, 'home');
+              },
               child: Text("Log in"),
             ),
-            Hgtbox(h: 20),
+            Hgtbox(h: 30),
             GestureDetector(
               onTap: () {
                 Navigator.pushReplacementNamed(context, 'signup');
